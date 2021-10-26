@@ -16,8 +16,8 @@ def select_dir():
 
 def enumerate_files(dir_path, recursive=False):
     for root, sub_dirs, files in os.walk(dir_path):
-        for name in files:
-            yield path_join(root, name)
+        for name1 in files:
+            yield path_join(root, name1)
         if not recursive:
             break
 
