@@ -33,17 +33,18 @@ def get_file_name_extension(file_full_name) -> Tuple[AnyStr, AnyStr, AnyStr]:
 
 
 def get_margins(fn):
-    with open(fn, "r") as stream:
-        try:
+    try:
+        with open(fn, "r") as stream:
             values = yaml.safe_load(stream)
             return values.get('top', 0.0378), values.get('left', 0), values.get('right', 0), values.get('bottom', 0)
-        except:
-            return 0.0378, 0, 0, 0
+    except:
+        return 0.0378, 0, 0, 0
 
 
 if __name__ == '__main__':
-    current_dir = os.path.dirname(os.path.abspath(__file__))
-    config_fn = path_join(current_dir, "config.yml")
+    # current_dir = os.path.dirname(os.path.abspath(__file__))
+    # config_fn = path_join(current_dir, "config.yml")
+    config_fn = path_join("config.yml")
     top, left, right, bottom = get_margins(config_fn)
 
     dir_name = select_dir()
