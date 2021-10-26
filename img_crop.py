@@ -58,13 +58,8 @@ if __name__ == '__main__':
     if bottom > 0:
         target_dir_name0 += "_bottom_" + str(bottom).replace(",", ".")
 
-    target_dir_name = target_dir_name0
-    i = 0
-    while os.path.isdir(target_dir_name):
-        i += 1
-        target_dir_name = target_dir_name0 + " (" + str(i) + ")"
-    os.makedirs(target_dir_name)
 
+    dir_not_inited = True
     i = 0
     for fn in enumerate_files(dir_name):
         try:
@@ -81,6 +76,15 @@ if __name__ == '__main__':
             right_x = width - width * right if right > 0 else width
 
             img_cropped = img[int(top_y):int(bottom_y), int(left_x):int(right_x)]
+
+            if dir_not_inited:
+                target_dir_name = target_dir_name0
+                i = 0
+                while os.path.isdir(target_dir_name):
+                    i += 1
+                    target_dir_name = target_dir_name0 + " (" + str(i) + ")"
+                os.makedirs(target_dir_name)
+                dir_not_inited = False
 
             new_fn = path_join(target_dir_name, name + ".png")
             cv2.imwrite(new_fn, img_cropped)

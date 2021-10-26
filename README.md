@@ -13,3 +13,13 @@ left: 0.123
 right: 0.123
 bottom: 0.123
 ```
+
+
+# create executable
+
+pip install .
+pip install pyinstaller
+pyinstaller labelme.spec
+dist/orientis-labelme --version
+
+
