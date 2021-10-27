@@ -1,7 +1,7 @@
 # Kullanım
 * img_crop exe çalıştırıldığı zaman dizin seçme diyaloğu açılır.
 * Seçilen dizindeki (sadece o klasörde bulunan) görüntü dosyalarının tümü taranır. Orjinal dosyalarda değişiklik yapılmaz.
-* Seçilen dizin altına _cropped_<crop edilme bilgisi> isimli bir klasör yaratılır ve içerisine crop edilmiş görüntü dosyaları yaratılır.
+* Seçilen dizin altına `_cropped_<crop edilme bilgisi>` isimli bir klasör yaratılır ve içerisine crop edilmiş görüntü dosyaları yaratılır.
 
 ### Varsayılandan farklı bir crop işlemi yapılmak istenirse:
 * img_crop exe'sinin bulunduğu yere bir config.yml dosyası oluşturulur. 
