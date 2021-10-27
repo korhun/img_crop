@@ -14,14 +14,15 @@ bottom: 0.123
 ```
 * Her eksen verilmek zorunda değildir. Sadece belirtilen eksenler kesilir. (Top kesilmek istenmezse 0 verilmeli.)
 
-# defaut crop:
+## defaut crop:
 ```
 top: 0.0378
 ```
 İmajın tepesinden % 3.78'i kesilecek demektir.
 
 
-# create executable
+# Developer için notlar:
+## create executable
 
 ```
 pip install .
